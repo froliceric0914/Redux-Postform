@@ -1,21 +1,14 @@
 import React, { Component } from 'react';
 
 class Post extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: []
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //         posts: []
+    //     };
+    // }
 
-    componentWillMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
-            .then(res => res.json())
-            .then(data => {
-                console.log('data: ', data);
-                this.setState({ posts: data });
-            });
-    }
+    // componentWillMount() {}
 
     render() {
         const postItems = this.state.posts.map(post => (

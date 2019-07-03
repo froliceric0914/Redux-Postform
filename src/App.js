@@ -3,13 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 
 import { provider } from 'react-redux';
-import { createStore, applyMiddleware } from 'redux';
+
 // provider is the glue between react and redux
+import store from './store';
 
 import Post from './components/Post';
 import PostForm from './components/PostForm';
 
-const store = createStore(() => [], {}, applyMiddleware());
+// const store = createStore(() => [], {}, applyMiddleware());
 
 function App() {
     return (
