@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 
+//inplement redux
+// thunk
+// dispatch
+//provider
+//
+
 class PostForm extends Component {
     constructor(props) {
         super(props);
