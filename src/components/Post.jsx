@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { fetchPosts } from '../actions/postAction.js';
 
 class Post extends Component {
     // constructor(props) {
@@ -8,7 +10,9 @@ class Post extends Component {
     //     };
     // }
 
-    // componentWillMount() {}
+    componentWillMount() {
+        this.props.fetchPosts();
+    }
 
     render() {
         const postItems = this.state.posts.map(post => (
@@ -26,4 +30,7 @@ class Post extends Component {
     }
 }
 
-export default Post;
+export default connect(
+    null,
+    { fetchPosts }
+)(Post);

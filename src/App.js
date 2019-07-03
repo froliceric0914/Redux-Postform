@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import { provider } from 'react-redux';
+import { Provider } from 'react-redux';
 
 // provider is the glue between react and redux
 import store from './store';
@@ -14,7 +14,7 @@ import PostForm from './components/PostForm';
 
 function App() {
     return (
-        <provider store={store}>
+        <Provider store={store}>
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
@@ -23,7 +23,7 @@ function App() {
                 <hr />
                 <Post />
             </div>
-        </provider>
+        </Provider>
     );
 }
 

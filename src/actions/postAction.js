@@ -8,6 +8,7 @@ import { FETCH_POSTS, NEW_POST } from './types';
 // return function(dispatch)
 // }
 export const fetchPosts = () => dispatch => {
+    console.log('fetching: ');
     fetch('https://jsonplaceholder.typicode.com/posts')
         .then(res => res.json())
         .then(data => {
