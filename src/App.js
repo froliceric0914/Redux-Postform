@@ -7,7 +7,7 @@ import { Provider } from 'react-redux';
 // provider is the glue between react and redux
 import store from './store';
 
-import Post from './components/Post';
+import Posts from './components/Posts';
 import PostForm from './components/PostForm';
 
 // const store = createStore(() => [], {}, applyMiddleware());
@@ -21,7 +21,7 @@ function App() {
                 </header>
                 <PostForm />
                 <hr />
-                <Post />
+                <Posts />
             </div>
         </Provider>
     );

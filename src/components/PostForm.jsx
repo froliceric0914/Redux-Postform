@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 
+//the below three imports are all for the usage of Redux
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { createPost } from '../actions/postAction';
 //inplement redux
 // thunk
 // dispatch
@@ -24,19 +28,10 @@ class PostForm extends Component {
             title: this.state.title,
             body: this.state.body
         };
-        fetch('https://jsonplaceholder.typicode.com/posts', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(post)
-        })
-            .then(res => res.json())
-            .then(data => console.log('post data: ', data));
+        //call action
+        this.props.createPost(post);
     };
-    //add state
-    //add onChange
-    //add onSubmit
+
     render() {
         return (
             <div>
@@ -69,4 +64,9 @@ class PostForm extends Component {
     }
 }
 
-export default PostForm;
+PostForm.propTypes = { createPost: PropTypes.func.isRequired };
+
+export default connect(
+    null,
+    { createPost }
+)(PostForm);
